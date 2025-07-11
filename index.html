@@ -5,162 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vijaya Lakshmi S - Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
-      color: #ffffff;
-    }
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+  }
 
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
 
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #00ffff;
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ffff;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #00ffff;
+  }
+
+  .hero {
+    text-align: center;
+    padding-top: 20vh;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero span {
+    color: #00ffff;
+  }
+
+  .hero h2 {
+    font-weight: normal;
+    margin-top: 10px;
+    color: #cccccc;
+  }
+
+  .hero p {
+    margin: 20px 0;
+    color: #aaa;
+  }
+
+  .buttons .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    color: #fff;
+    background-color: #222;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .buttons .btn:hover {
+    background-color: #00ffff;
+    color: #000;
+    transform: scale(1.05);
+  }
+
+  /* ✅ Responsive Navbar Fix */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
     }
 
     .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-      color: #00ffff;
-    }
-
-    /* ✅ Mobile Toggle Button */
-    .menu-toggle {
       display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #fff;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #111;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 1rem;
+      border-radius: 10px;
+      z-index: 1000;
     }
 
-    @media screen and (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #111;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 1rem;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-    }
-
-    .hero {
-      text-align: center;
-      padding-top: 20vh;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero span {
-      color: #00ffff;
-    }
-
-    .hero h2 {
-      font-weight: normal;
-      margin-top: 10px;
-      color: #cccccc;
-    }
-
-    .hero p {
-      margin: 20px 0;
-      color: #aaa;
-    }
-
-    .buttons .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
-      color: #fff;
-      background-color: #222;
-      border: 1px solid #00ffff;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .buttons .btn:hover {
-      background-color: #00ffff;
-      color: #000;
-      transform: scale(1.05);
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem 0;
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-      color: #aaa;
-      font-size: 0.9rem;
-      border-top: 1px solid #333;
-      margin-top: 60px;
-    }
-
-    .footer .social-icons {
-      margin-top: 10px;
+    .nav-links.show {
       display: flex;
-      justify-content: center;
-      gap: 20px;
     }
-
-    .footer .social-icons a {
-      color: #00ffff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: transform 0.3s ease, color 0.3s;
-    }
-
-    .footer .social-icons a:hover {
-      transform: scale(1.1);
-      color: #ffffff;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
